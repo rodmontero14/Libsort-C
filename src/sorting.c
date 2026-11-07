@@ -29,3 +29,22 @@ void BubbleSort(int *v, int n){
         }
     }
 }
+/*FLAGBUBBLESORT:
+* A sorting algorithm that brings smaller elements to the left.
+* Improved from BUBBLESORT by adding a flag that avoids unnecessary
+* iterations when the array is sorted. */
+void FlagBubbleSort(int *v, int n){
+    int swapped=1;
+    for(int i=0; i<n; i++){
+        if(swapped==0){
+            break;
+        }
+        swapped=0;
+        for(int j=n-1; j>i; j--){
+            if(v[j-1]>v[j]){
+                Swap(&v[j-1], &v[j]);
+                swapped=1;
+            }
+        }
+    }
+}
