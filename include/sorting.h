@@ -4,7 +4,7 @@
 #include<stdlib.h>
 
 void BubbleSort(int *v, int n);
-void FlagBubblesort(int *v, int n);
+void FlagBubbleSort(int *v, int n);
 void CocktailSort(int *v, int n);
 void CombSort(int *v, int n);
 void SelectionSort(int *v, int n);
