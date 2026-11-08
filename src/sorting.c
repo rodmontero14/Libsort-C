@@ -48,3 +48,33 @@ void FlagBubbleSort(int *v, int n){
         }
     }
 }
+/* COCKTAILSORT:
+ * A bidirectional variant of BubbleSort
+ * -----------------------------------------------------------------------------
+ * The name comes from how a cocktail shaker moves back and forth: the algorithm 
+ * alternates between left-to-right and right-to-left passes to shift large and 
+ * small values to their correct positions. */
+void CocktailSort(int *v, int n){
+    int left=0;
+    int right=n-1;
+    int index;
+    int swapped=1;
+    while(left<right&&swapped==1){
+        swapped=0;
+        for(index=left; index<right; index++){
+           if(v[index+1]<v[index]){
+                Swap(&v[index+1], &v[index]);
+                swapped=1;
+            }
+        }
+        right--;
+        for(index=right; index>left; index--){
+           if(v[index-1]>v[index]){
+                Swap(&v[index-1], &v[index]);
+                swapped=1;
+            }
+        }
+        left++;
+    }
+}
+
